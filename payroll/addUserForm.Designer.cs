@@ -47,6 +47,7 @@
             this.emailvalbl = new System.Windows.Forms.Label();
             this.telvallbl = new System.Windows.Forms.Label();
             this.adduserlbl = new System.Windows.Forms.Label();
+            this.compltelbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // adduserlogo
@@ -228,12 +229,23 @@
             this.adduserlbl.BackColor = System.Drawing.Color.White;
             this.adduserlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.adduserlbl.Font = new System.Drawing.Font("Raleway Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adduserlbl.Location = new System.Drawing.Point(104, 503);
+            this.adduserlbl.Location = new System.Drawing.Point(5, 503);
             this.adduserlbl.Name = "adduserlbl";
             this.adduserlbl.Size = new System.Drawing.Size(83, 22);
             this.adduserlbl.TabIndex = 17;
             this.adduserlbl.Text = "Add User";
             this.adduserlbl.Click += new System.EventHandler(this.adduserlbl_Click);
+            // 
+            // compltelbl
+            // 
+            this.compltelbl.AutoSize = true;
+            this.compltelbl.BackColor = System.Drawing.Color.Transparent;
+            this.compltelbl.Font = new System.Drawing.Font("Raleway Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.compltelbl.Location = new System.Drawing.Point(119, 506);
+            this.compltelbl.Name = "compltelbl";
+            this.compltelbl.Size = new System.Drawing.Size(12, 15);
+            this.compltelbl.TabIndex = 18;
+            this.compltelbl.Text = "1";
             // 
             // addUserForm
             // 
@@ -241,6 +253,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(282, 540);
+            this.Controls.Add(this.compltelbl);
             this.Controls.Add(this.adduserlbl);
             this.Controls.Add(this.telvallbl);
             this.Controls.Add(this.emailvalbl);
@@ -288,5 +301,6 @@
         private System.Windows.Forms.Label emailvalbl;
         private System.Windows.Forms.Label telvallbl;
         private System.Windows.Forms.Label adduserlbl;
+        private System.Windows.Forms.Label compltelbl;
     }
 }

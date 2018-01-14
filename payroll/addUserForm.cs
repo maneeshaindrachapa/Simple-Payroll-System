@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace payroll
 {
@@ -21,10 +22,13 @@ namespace payroll
         bool firstnameValidate = false;
         bool lastnameValidate = false;
 
-
+        
         public addUserForm()
         {
             InitializeComponent();
+            TaskScheduler uiScheduler = TaskScheduler.FromCurrentSynchronizationContext();
+
+            Task t=Task.Factory.StartNew(() => checkValid(uiScheduler));
         }
 
         //exit lbl
@@ -171,5 +175,26 @@ namespace payroll
                 MessageBox.Show("There is an Error,Conecting to the Database");
             }
         }
+
+        //task parallism
+        private void checkValid(TaskScheduler uiScheduler)
+        {
+            Task.Factory.StartNew(() =>
+            {
+                if (indexValidate && firstnameValidate && lastnameValidate && emailValidate && telValidate)
+                {
+                    compltelbl.Text += "*All Details are Correct";
+                    compltelbl.ForeColor = System.Drawing.Color.Green;
+                }
+                else
+                {   
+                    compltelbl.Text = "*Fill The Details";
+                    compltelbl.ForeColor = System.Drawing.Color.Red;
+                }
+            }, CancellationToken.None, TaskCreationOptions.None, uiScheduler);
+
+        }
+
+        
     }
 }

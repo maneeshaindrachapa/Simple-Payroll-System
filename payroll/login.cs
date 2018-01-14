@@ -49,7 +49,6 @@ namespace payroll
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            //C:\Users\Maneesha\Desktop\payroll\payroll\payroll\payroll.mdf
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 

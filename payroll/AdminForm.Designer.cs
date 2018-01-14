@@ -56,6 +56,37 @@
             this.telephonelbl = new System.Windows.Forms.Label();
             this.salarytxtlbl = new System.Windows.Forms.Label();
             this.salarylbl = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.calculatesalarylbl = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.basicNUD = new System.Windows.Forms.NumericUpDown();
+            this.interimNUD = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.costoflivingNUD = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.otherNUD = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.subtotaltxtlbl = new System.Windows.Forms.Label();
+            this.specialNUD = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.overtimeNUD = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.grosspaytxtlbl = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.deductionsNUD = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
+            this.netpaytxtlbl = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.calculatenetlbl = new System.Windows.Forms.Label();
+            this.paytoemployeelbl = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.basicNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.interimNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costoflivingNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.otherNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specialNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overtimeNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deductionsNUD)).BeginInit();
             this.SuspendLayout();
             // 
             // logoutlbl1
@@ -374,6 +405,336 @@
             this.salarylbl.TabIndex = 71;
             this.salarylbl.Text = "Net Salary";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(346, 125);
+            this.label3.MinimumSize = new System.Drawing.Size(600, 420);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(600, 420);
+            this.label3.TabIndex = 73;
+            // 
+            // calculatesalarylbl
+            // 
+            this.calculatesalarylbl.AutoSize = true;
+            this.calculatesalarylbl.BackColor = System.Drawing.Color.Transparent;
+            this.calculatesalarylbl.Font = new System.Drawing.Font("Raleway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calculatesalarylbl.Location = new System.Drawing.Point(349, 130);
+            this.calculatesalarylbl.Name = "calculatesalarylbl";
+            this.calculatesalarylbl.Size = new System.Drawing.Size(160, 24);
+            this.calculatesalarylbl.TabIndex = 74;
+            this.calculatesalarylbl.Text = "Calculate Salary";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Raleway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(355, 168);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 20);
+            this.label4.TabIndex = 75;
+            this.label4.Text = "Basic";
+            // 
+            // basicNUD
+            // 
+            this.basicNUD.DecimalPlaces = 2;
+            this.basicNUD.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.basicNUD.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.basicNUD.Location = new System.Drawing.Point(512, 165);
+            this.basicNUD.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.basicNUD.Name = "basicNUD";
+            this.basicNUD.Size = new System.Drawing.Size(135, 25);
+            this.basicNUD.TabIndex = 76;
+            // 
+            // interimNUD
+            // 
+            this.interimNUD.DecimalPlaces = 2;
+            this.interimNUD.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.interimNUD.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.interimNUD.Location = new System.Drawing.Point(512, 194);
+            this.interimNUD.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.interimNUD.Name = "interimNUD";
+            this.interimNUD.Size = new System.Drawing.Size(135, 25);
+            this.interimNUD.TabIndex = 78;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Raleway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(355, 196);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(151, 20);
+            this.label5.TabIndex = 77;
+            this.label5.Text = "Interim Allowance";
+            // 
+            // costoflivingNUD
+            // 
+            this.costoflivingNUD.DecimalPlaces = 2;
+            this.costoflivingNUD.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costoflivingNUD.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.costoflivingNUD.Location = new System.Drawing.Point(512, 223);
+            this.costoflivingNUD.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.costoflivingNUD.Name = "costoflivingNUD";
+            this.costoflivingNUD.Size = new System.Drawing.Size(135, 25);
+            this.costoflivingNUD.TabIndex = 80;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Raleway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(355, 226);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(117, 20);
+            this.label6.TabIndex = 79;
+            this.label6.Text = "Cost of Living";
+            // 
+            // otherNUD
+            // 
+            this.otherNUD.DecimalPlaces = 2;
+            this.otherNUD.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otherNUD.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.otherNUD.Location = new System.Drawing.Point(511, 253);
+            this.otherNUD.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.otherNUD.Name = "otherNUD";
+            this.otherNUD.Size = new System.Drawing.Size(135, 25);
+            this.otherNUD.TabIndex = 82;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Raleway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(356, 254);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 20);
+            this.label7.TabIndex = 81;
+            this.label7.Text = "Other";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Raleway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(442, 286);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 20);
+            this.label8.TabIndex = 83;
+            this.label8.Text = "Sub Total";
+            // 
+            // subtotaltxtlbl
+            // 
+            this.subtotaltxtlbl.AutoSize = true;
+            this.subtotaltxtlbl.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.subtotaltxtlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.subtotaltxtlbl.Font = new System.Drawing.Font("Raleway Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtotaltxtlbl.Location = new System.Drawing.Point(529, 284);
+            this.subtotaltxtlbl.MinimumSize = new System.Drawing.Size(190, 25);
+            this.subtotaltxtlbl.Name = "subtotaltxtlbl";
+            this.subtotaltxtlbl.Size = new System.Drawing.Size(190, 25);
+            this.subtotaltxtlbl.TabIndex = 84;
+            // 
+            // specialNUD
+            // 
+            this.specialNUD.DecimalPlaces = 2;
+            this.specialNUD.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.specialNUD.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.specialNUD.Location = new System.Drawing.Point(511, 344);
+            this.specialNUD.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.specialNUD.Name = "specialNUD";
+            this.specialNUD.Size = new System.Drawing.Size(135, 25);
+            this.specialNUD.TabIndex = 88;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Raleway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(354, 346);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(151, 20);
+            this.label10.TabIndex = 87;
+            this.label10.Text = "Special Allowance";
+            // 
+            // overtimeNUD
+            // 
+            this.overtimeNUD.DecimalPlaces = 2;
+            this.overtimeNUD.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.overtimeNUD.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.overtimeNUD.Location = new System.Drawing.Point(511, 315);
+            this.overtimeNUD.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.overtimeNUD.Name = "overtimeNUD";
+            this.overtimeNUD.Size = new System.Drawing.Size(135, 25);
+            this.overtimeNUD.TabIndex = 86;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Raleway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(354, 318);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(83, 20);
+            this.label11.TabIndex = 85;
+            this.label11.Text = "Overtime";
+            // 
+            // grosspaytxtlbl
+            // 
+            this.grosspaytxtlbl.AutoSize = true;
+            this.grosspaytxtlbl.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.grosspaytxtlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.grosspaytxtlbl.Font = new System.Drawing.Font("Raleway Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grosspaytxtlbl.Location = new System.Drawing.Point(528, 374);
+            this.grosspaytxtlbl.MinimumSize = new System.Drawing.Size(190, 25);
+            this.grosspaytxtlbl.Name = "grosspaytxtlbl";
+            this.grosspaytxtlbl.Size = new System.Drawing.Size(190, 25);
+            this.grosspaytxtlbl.TabIndex = 90;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Raleway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(441, 376);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(86, 20);
+            this.label13.TabIndex = 89;
+            this.label13.Text = "Gross Pay";
+            // 
+            // deductionsNUD
+            // 
+            this.deductionsNUD.DecimalPlaces = 2;
+            this.deductionsNUD.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deductionsNUD.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.deductionsNUD.Location = new System.Drawing.Point(511, 405);
+            this.deductionsNUD.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.deductionsNUD.Name = "deductionsNUD";
+            this.deductionsNUD.Size = new System.Drawing.Size(135, 25);
+            this.deductionsNUD.TabIndex = 92;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Raleway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(354, 407);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(99, 20);
+            this.label14.TabIndex = 91;
+            this.label14.Text = "Deductions";
+            // 
+            // netpaytxtlbl
+            // 
+            this.netpaytxtlbl.AutoSize = true;
+            this.netpaytxtlbl.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.netpaytxtlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.netpaytxtlbl.Font = new System.Drawing.Font("Raleway Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.netpaytxtlbl.Location = new System.Drawing.Point(526, 433);
+            this.netpaytxtlbl.MinimumSize = new System.Drawing.Size(190, 25);
+            this.netpaytxtlbl.Name = "netpaytxtlbl";
+            this.netpaytxtlbl.Size = new System.Drawing.Size(190, 25);
+            this.netpaytxtlbl.TabIndex = 94;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Raleway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(439, 435);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(71, 20);
+            this.label16.TabIndex = 93;
+            this.label16.Text = "Net Pay";
+            // 
+            // calculatenetlbl
+            // 
+            this.calculatenetlbl.AutoSize = true;
+            this.calculatenetlbl.BackColor = System.Drawing.Color.White;
+            this.calculatenetlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.calculatenetlbl.Font = new System.Drawing.Font("Raleway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calculatenetlbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.calculatenetlbl.Location = new System.Drawing.Point(356, 485);
+            this.calculatenetlbl.Name = "calculatenetlbl";
+            this.calculatenetlbl.Size = new System.Drawing.Size(152, 22);
+            this.calculatenetlbl.TabIndex = 95;
+            this.calculatenetlbl.Text = "Calculate Net Pay";
+            this.calculatenetlbl.Click += new System.EventHandler(this.calculatenetlbl_Click);
+            // 
+            // paytoemployeelbl
+            // 
+            this.paytoemployeelbl.AutoSize = true;
+            this.paytoemployeelbl.BackColor = System.Drawing.Color.White;
+            this.paytoemployeelbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paytoemployeelbl.Font = new System.Drawing.Font("Raleway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paytoemployeelbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.paytoemployeelbl.Location = new System.Drawing.Point(526, 485);
+            this.paytoemployeelbl.Name = "paytoemployeelbl";
+            this.paytoemployeelbl.Size = new System.Drawing.Size(144, 22);
+            this.paytoemployeelbl.TabIndex = 96;
+            this.paytoemployeelbl.Text = "Pay to Employee";
+            this.paytoemployeelbl.Click += new System.EventHandler(this.paytoemployeelbl_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -381,6 +742,30 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(976, 566);
+            this.Controls.Add(this.paytoemployeelbl);
+            this.Controls.Add(this.calculatenetlbl);
+            this.Controls.Add(this.netpaytxtlbl);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.deductionsNUD);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.grosspaytxtlbl);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.specialNUD);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.overtimeNUD);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.subtotaltxtlbl);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.otherNUD);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.costoflivingNUD);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.interimNUD);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.basicNUD);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.calculatesalarylbl);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.salarytxtlbl);
             this.Controls.Add(this.salarylbl);
             this.Controls.Add(this.telephonetxtlbl);
@@ -412,6 +797,13 @@
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminForm";
+            ((System.ComponentModel.ISupportInitialize)(this.basicNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.interimNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costoflivingNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.otherNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specialNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overtimeNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deductionsNUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,5 +838,29 @@
         private System.Windows.Forms.Label telephonelbl;
         private System.Windows.Forms.Label salarytxtlbl;
         private System.Windows.Forms.Label salarylbl;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label calculatesalarylbl;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown basicNUD;
+        private System.Windows.Forms.NumericUpDown interimNUD;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown costoflivingNUD;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown otherNUD;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label subtotaltxtlbl;
+        private System.Windows.Forms.NumericUpDown specialNUD;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown overtimeNUD;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label grosspaytxtlbl;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.NumericUpDown deductionsNUD;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label netpaytxtlbl;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label calculatenetlbl;
+        private System.Windows.Forms.Label paytoemployeelbl;
     }
 }
