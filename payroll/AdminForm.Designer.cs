@@ -80,6 +80,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.calculatenetlbl = new System.Windows.Forms.Label();
             this.paytoemployeelbl = new System.Windows.Forms.Label();
+            this.removeEmployeelbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.basicNUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.interimNUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.costoflivingNUD)).BeginInit();
@@ -409,12 +410,13 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
             this.label3.Location = new System.Drawing.Point(346, 125);
-            this.label3.MinimumSize = new System.Drawing.Size(600, 420);
+            this.label3.MinimumSize = new System.Drawing.Size(400, 420);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(600, 420);
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label3.Size = new System.Drawing.Size(400, 420);
             this.label3.TabIndex = 73;
             // 
             // calculatesalarylbl
@@ -735,6 +737,20 @@
             this.paytoemployeelbl.Text = "Pay to Employee";
             this.paytoemployeelbl.Click += new System.EventHandler(this.paytoemployeelbl_Click);
             // 
+            // removeEmployeelbl
+            // 
+            this.removeEmployeelbl.AutoSize = true;
+            this.removeEmployeelbl.BackColor = System.Drawing.Color.White;
+            this.removeEmployeelbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.removeEmployeelbl.Font = new System.Drawing.Font("Raleway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeEmployeelbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.removeEmployeelbl.Location = new System.Drawing.Point(794, 125);
+            this.removeEmployeelbl.Name = "removeEmployeelbl";
+            this.removeEmployeelbl.Size = new System.Drawing.Size(161, 22);
+            this.removeEmployeelbl.TabIndex = 97;
+            this.removeEmployeelbl.Text = "Remove Employee";
+            this.removeEmployeelbl.Click += new System.EventHandler(this.removeEmployeelbl_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -742,6 +758,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(976, 566);
+            this.Controls.Add(this.removeEmployeelbl);
             this.Controls.Add(this.paytoemployeelbl);
             this.Controls.Add(this.calculatenetlbl);
             this.Controls.Add(this.netpaytxtlbl);
@@ -862,5 +879,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label calculatenetlbl;
         private System.Windows.Forms.Label paytoemployeelbl;
+        private System.Windows.Forms.Label removeEmployeelbl;
     }
 }

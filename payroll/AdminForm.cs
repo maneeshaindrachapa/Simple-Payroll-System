@@ -179,5 +179,12 @@ namespace payroll
                 MessageBox.Show("Please Calculate Net Pay for the Employee");
             }
         }
+
+        private void removeEmployeelbl_Click(object sender, EventArgs e)
+        {
+            RemoveEmployee removeemployee = new RemoveEmployee();
+            removeemployee.loadEmployees();
+            removeemployee.ShowDialog();
+        }
     }
 }
