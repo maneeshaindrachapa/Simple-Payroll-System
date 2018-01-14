@@ -49,6 +49,10 @@ namespace payroll
 
                     MessageBox.Show("User Added Succesfully");
                 }
+                else
+                {
+                    MessageBox.Show("There is an Invaild Details in Form");
+                }
                 
             }
             catch (Exception ex)

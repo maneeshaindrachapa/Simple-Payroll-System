@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace payroll
 {
@@ -43,6 +44,45 @@ namespace payroll
         {
             addUserForm addUserform = new addUserForm();
             addUserform.ShowDialog();
+        }
+
+        private void searchlbl_Click(object sender, EventArgs e)
+        {
+            string indexNo = searchTB.Text.ToString();
+            SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\payroll\payroll\payroll\payroll.mdf;Integrated Security=True");
+            string query = "SELECT * FROM employee where indexNo='" + indexNo+ "'";
+            SqlDataAdapter data = new SqlDataAdapter(query, sqlConn);
+            DataTable dtbl = new DataTable();
+            data.Fill(dtbl);
+            if (dtbl.Rows.Count == 1)
+            {
+                validsearchlbl.Text = "Valid Employee";
+                validsearchlbl.ForeColor = System.Drawing.Color.Green;
+                foreach (DataRow row in dtbl.Rows)
+                {
+                    //filling text fields
+                    indexnotxtlbl.Text= row["indexNo"].ToString();
+                    firstnametxtlbl.Text = row["firstName"].ToString();
+                    lastnametxtlbl.Text = row["lastName"].ToString();
+                    salarytxtlbl.Text = row["salary"].ToString();
+                    emailtxtlbl.Text = row["email"].ToString();
+                    telephonetxtlbl.Text = row["telephone"].ToString();
+                }
+                
+            }
+            else
+            {
+                validsearchlbl.Text = "Invalid Employee";
+                validsearchlbl.ForeColor = System.Drawing.Color.Red;
+
+                //reset text fields
+                indexnotxtlbl.ResetText();
+                firstnametxtlbl.ResetText();
+                lastnametxtlbl.ResetText();
+                emailtxtlbl.ResetText();
+                telephonetxtlbl.ResetText();
+                salarytxtlbl.ResetText();
+            }
         }
     }
 }
