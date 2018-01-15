@@ -243,7 +243,7 @@
             this.compltelbl.Font = new System.Drawing.Font("Raleway Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compltelbl.Location = new System.Drawing.Point(119, 506);
             this.compltelbl.Name = "compltelbl";
-            this.compltelbl.Size = new System.Drawing.Size(12, 15);
+            this.compltelbl.Size = new System.Drawing.Size(14, 16);
             this.compltelbl.TabIndex = 18;
             this.compltelbl.Text = "1";
             // 
@@ -273,6 +273,7 @@
             this.Controls.Add(this.exitlbl);
             this.Controls.Add(this.adduserlogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "addUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addUserForm";

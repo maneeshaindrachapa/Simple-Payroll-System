@@ -28,10 +28,11 @@ namespace payroll
             InitializeComponent();
             TaskScheduler uiScheduler = TaskScheduler.FromCurrentSynchronizationContext();
 
+            //task parallism to check validations
             Task t=Task.Factory.StartNew(() => checkValid(uiScheduler));
         }
 
-        //exit lbl
+        //exit 
         private void exitlbl_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -162,7 +163,7 @@ namespace payroll
                 SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\payroll\payroll\payroll\payroll.mdf;Integrated Security=True");
                 sqlConn.Open();
 
-                //check that incex no is alreadyin db
+                //check that index no is alreadyin db
                 string query = "SELECT * FROM employee where indexNo='" + indexnoTB.Text + "'";
                 SqlDataAdapter data = new SqlDataAdapter(query, sqlConn);
                 DataTable dtbl = new DataTable();
@@ -186,7 +187,7 @@ namespace payroll
             }
         }
 
-        //task parallism
+        //task parallism to check valididty
         private void checkValid(TaskScheduler uiScheduler)
         {
             Task.Factory.StartNew(() =>

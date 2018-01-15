@@ -21,7 +21,7 @@ namespace payroll
 
         private void shutdown_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         //data parallism to load data from database
@@ -44,18 +44,13 @@ namespace payroll
 
                 try
                 {
-                    Parallel.ForEach(nums, po, (i, loopState) =>
+                    //data parallism for grid
+                    Parallel.Invoke(() =>
                     {
-                        if (i == 0)
+                        foreach (DataRow row in dtbl.Rows)
                         {
-                            foreach (DataRow row in dtbl.Rows)
-                            {
-                                employeeDG.Rows.Add(null,row["indexNo"].ToString(), row["firstName"].ToString(), row["lastName"].ToString(), row["email"].ToString(), row["telephone"].ToString(), row["salary"].ToString());
-                            }
+                            employeeDG.Rows.Add(null, row["indexNo"].ToString(), row["firstName"].ToString(), row["lastName"].ToString(), row["email"].ToString(), row["telephone"].ToString(), row["salary"].ToString());
                         }
-                        loopState.Stop();
-                        po.CancellationToken.ThrowIfCancellationRequested();
-
                     });
                 }
                 catch (OperationCanceledException ex)
@@ -92,7 +87,7 @@ namespace payroll
                         }
                     }
                 }
-
+                employeeDG.Rows.Clear();
                 loadEmployees();
             }
         }

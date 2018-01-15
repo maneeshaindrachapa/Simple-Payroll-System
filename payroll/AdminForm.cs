@@ -114,14 +114,16 @@ namespace payroll
             }
         }
 
+        //task parallism to calculate net pay
         private void calculatenetlbl_Click(object sender, EventArgs e)
         {
-            //task parallism to calculate net pay
+            
             decimal subTotal = 0;
             decimal grossPay = 0;
             decimal netPay =0;
             TaskScheduler uiScheduler = TaskScheduler.FromCurrentSynchronizationContext();
 
+            //task paralllism to calculate all the values
             Task.Factory.StartNew(() =>
             {
                 decimal basic = Convert.ToDecimal(basicNUD.Value);
@@ -137,6 +139,7 @@ namespace payroll
                
             },CancellationToken.None, TaskCreationOptions.None, uiScheduler);
 
+            //task parallism to set subtotal,grosspay,netpay,send mail
             Task.Factory.StartNew(() =>setSubTotal(subTotal),CancellationToken.None, TaskCreationOptions.None, uiScheduler);
             Task.Factory.StartNew(() => setGrossPay(grossPay), CancellationToken.None, TaskCreationOptions.None, uiScheduler);
             Task.Factory.StartNew(() => setNetPay(netPay), CancellationToken.None, TaskCreationOptions.None, uiScheduler);
@@ -217,7 +220,13 @@ namespace payroll
         private void removeEmployeelbl_Click(object sender, EventArgs e)
         {
             RemoveEmployee removeemployee = new RemoveEmployee();
-            removeemployee.loadEmployees();
+            TaskScheduler uiScheduler = TaskScheduler.FromCurrentSynchronizationContext();
+
+            //task paralllism to calculate all the values
+            Task.Factory.StartNew(() =>
+            {
+                removeemployee.loadEmployees();
+            }, CancellationToken.None, TaskCreationOptions.None, uiScheduler);
             removeemployee.ShowDialog();
         }
     }
