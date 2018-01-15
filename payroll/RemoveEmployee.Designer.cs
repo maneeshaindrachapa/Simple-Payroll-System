@@ -39,6 +39,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shutdown = new System.Windows.Forms.Label();
+            this.removeUserlbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +67,8 @@
             // 
             // employeeDG
             // 
+            this.employeeDG.AllowUserToDeleteRows = false;
+            this.employeeDG.AllowUserToResizeColumns = false;
             this.employeeDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.employeeDG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -74,7 +77,7 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            this.employeeDG.Location = new System.Drawing.Point(137, 70);
+            this.employeeDG.Location = new System.Drawing.Point(155, 70);
             this.employeeDG.Name = "employeeDG";
             this.employeeDG.RowTemplate.Height = 24;
             this.employeeDG.Size = new System.Drawing.Size(791, 423);
@@ -142,12 +145,25 @@
             this.shutdown.Text = "X";
             this.shutdown.Click += new System.EventHandler(this.shutdown_Click);
             // 
+            // removeUserlbl
+            // 
+            this.removeUserlbl.AutoSize = true;
+            this.removeUserlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.removeUserlbl.Font = new System.Drawing.Font("Raleway", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeUserlbl.Location = new System.Drawing.Point(6, 469);
+            this.removeUserlbl.Name = "removeUserlbl";
+            this.removeUserlbl.Size = new System.Drawing.Size(130, 24);
+            this.removeUserlbl.TabIndex = 20;
+            this.removeUserlbl.Text = "Remove User";
+            this.removeUserlbl.Click += new System.EventHandler(this.removeUserlbl_Click);
+            // 
             // RemoveEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(958, 519);
+            this.Controls.Add(this.removeUserlbl);
             this.Controls.Add(this.shutdown);
             this.Controls.Add(this.employeeDG);
             this.Controls.Add(this.label2);
@@ -174,5 +190,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label shutdown;
+        private System.Windows.Forms.Label removeUserlbl;
     }
 }

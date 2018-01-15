@@ -24,8 +24,9 @@ namespace payroll
             this.Dispose();
         }
 
+        //data parallism to load data from database
         public void loadEmployees()
-        {   //data parallism to load data from database
+        {  
             SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\payroll\payroll\payroll\payroll.mdf;Integrated Security=True");
             string query = "SELECT * FROM employee";
             SqlDataAdapter data = new SqlDataAdapter(query, sqlConn);
@@ -45,9 +46,12 @@ namespace payroll
                 {
                     Parallel.ForEach(nums, po, (i, loopState) =>
                     {
-                        foreach (DataRow row in dtbl.Rows)
+                        if (i == 0)
                         {
-                            employeeDG.Rows.Add(row["indexNo"].ToString(), row["firstName"].ToString(), row["lastName"].ToString(), row["email"].ToString(), row["telephone"].ToString(), row["salary"].ToString());
+                            foreach (DataRow row in dtbl.Rows)
+                            {
+                                employeeDG.Rows.Add(row["indexNo"].ToString(), row["firstName"].ToString(), row["lastName"].ToString(), row["email"].ToString(), row["telephone"].ToString(), row["salary"].ToString());
+                            }
                         }
                         loopState.Stop();
 
@@ -65,6 +69,16 @@ namespace payroll
                 }
             }
 
+        }
+
+        private void removeUserlbl_Click(object sender, EventArgs e)
+        {
+            foreach (DataRow row in employeeDG.Rows)
+            {
+                //if ( /* your condition here */ )
+                    row.Delete();
+            }
+            
         }
     }
 }
