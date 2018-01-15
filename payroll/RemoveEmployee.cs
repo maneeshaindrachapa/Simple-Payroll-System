@@ -50,11 +50,10 @@ namespace payroll
                         {
                             foreach (DataRow row in dtbl.Rows)
                             {
-                                employeeDG.Rows.Add(row["indexNo"].ToString(), row["firstName"].ToString(), row["lastName"].ToString(), row["email"].ToString(), row["telephone"].ToString(), row["salary"].ToString());
+                                employeeDG.Rows.Add(null,row["indexNo"].ToString(), row["firstName"].ToString(), row["lastName"].ToString(), row["email"].ToString(), row["telephone"].ToString(), row["salary"].ToString());
                             }
                         }
                         loopState.Stop();
-
                         po.CancellationToken.ThrowIfCancellationRequested();
 
                     });
@@ -73,12 +72,29 @@ namespace payroll
 
         private void removeUserlbl_Click(object sender, EventArgs e)
         {
-            foreach (DataRow row in employeeDG.Rows)
+            List<DataGridViewRow> selectedRows = (from row in employeeDG.Rows.Cast<DataGridViewRow>()
+                                                  where Convert.ToBoolean(row.Cells["checkBoxColumn"].Value) == true
+                                                  select row).ToList();
+            if (MessageBox.Show(string.Format("Do you want to delete {0} Employees?", selectedRows.Count), "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                //if ( /* your condition here */ )
-                    row.Delete();
+                foreach (DataGridViewRow row in selectedRows)
+                {
+                    using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\payroll\payroll\payroll\payroll.mdf;Integrated Security=True")
+)
+                    {
+                        using (SqlCommand cmd = new SqlCommand("DELETE FROM employee WHERE indexNo = @indexNo", con))
+                        {
+                            cmd.CommandType = CommandType.Text;
+                            cmd.Parameters.AddWithValue("@indexNo", row.Cells["indexNo"].Value);
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                        }
+                    }
+                }
+
+                loadEmployees();
             }
-            
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Threading;
+using System.Net.Mail;
 
 namespace payroll
 {
@@ -139,6 +140,36 @@ namespace payroll
             Task.Factory.StartNew(() =>setSubTotal(subTotal),CancellationToken.None, TaskCreationOptions.None, uiScheduler);
             Task.Factory.StartNew(() => setGrossPay(grossPay), CancellationToken.None, TaskCreationOptions.None, uiScheduler);
             Task.Factory.StartNew(() => setNetPay(netPay), CancellationToken.None, TaskCreationOptions.None, uiScheduler);
+            
+        }
+
+        private bool sendMail()
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                mail.From = new MailAddress("charinilakshani@gmail.com");
+                mail.To.Add(emailtxtlbl.Text);
+                mail.Subject = "Net Salary Of The Month";
+                mail.IsBodyHtml = true;
+                mail.Body = "<html><body><h3><strong>Net Salary</strong></h3><p>Basic :"+basicNUD.Value.ToString()+"<br>Interim Allowance:"+interimNUD.Value.ToString()+"<br>Cost of Living:"+costoflivingNUD.Value.ToString()+"<br>Other:"+otherNUD.Value.ToString()+"<h4> Sub Total:"+subtotaltxtlbl.Text+"</h4><br>Overtime:"+overtimeNUD.Value.ToString()+"<br>Special Allowance:"+specialNUD.Value.ToString()+"<br><h4> Gross Pay:"+grosspaytxtlbl.Text+"</h4><br>Deductions:"+deductionsNUD.Value.ToString()+"<br><h4> Net Pay:"+netpaytxtlbl.Text+"</h4><br></body></html> ";
+
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("charinilakshani@gmail.com", "malkanthi1234");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail);
+                MessageBox.Show("Mail Send to "+ firstnametxtlbl.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+             return true;
+
         }
 
         private string setSubTotal(decimal subTotal)
@@ -168,6 +199,9 @@ namespace payroll
                     string query = "UPDATE employee set salary='" + netpaytxtlbl.Text + "' WHERE indexNo='" + indexnotxtlbl.Text.ToString() + "'";
                     SqlCommand cmd = new SqlCommand(query, sqlConn);
                     cmd.ExecuteNonQuery();
+
+                    TaskScheduler uiScheduler = TaskScheduler.FromCurrentSynchronizationContext();
+                    Task.Factory.StartNew(() => sendMail(), CancellationToken.None, TaskCreationOptions.None, uiScheduler);
                 }
                 else
                 {

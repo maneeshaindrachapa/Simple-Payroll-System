@@ -52,6 +52,16 @@ namespace payroll
                     cmd3.ExecuteNonQuery();
 
                     MessageBox.Show("User Added Succesfully");
+                    indexnoTB.ResetText();
+                    firstnameTB.ResetText();
+                    lastnameTB.ResetText();
+                    emailTB.ResetText();
+                    telephoneTB.ResetText();
+
+                    //setiing invalid in index no
+                    indexValidate = false;
+                    indexVallbl.Text = "Invaild";
+                    indexVallbl.ForeColor = System.Drawing.Color.Red;
                 }
                 else
                 {
@@ -67,7 +77,7 @@ namespace payroll
 
         //telephone no validation
         private void telephoneTB_TextChanged(object sender, EventArgs e)
-        {
+        {   
             Regex validator = new Regex("(0|1|2|3|4|5|6|7|8|9){1}[0-9]{9}");
             string match = validator.Match(telephoneTB.Text).Value.ToString();
             if (match.Length == 10)
