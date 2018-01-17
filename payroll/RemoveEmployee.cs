@@ -35,8 +35,7 @@ namespace payroll
             if (dtbl.Rows.Count > 0)
             {
                 int[] nums = Enumerable.Range(0, 10).ToArray();
-
-
+                
                 CancellationTokenSource cts = new CancellationTokenSource();
 
                 ParallelOptions po = new ParallelOptions();
@@ -72,21 +71,25 @@ namespace payroll
                                                   select row).ToList();
             if (MessageBox.Show(string.Format("Do you want to delete {0} Employees?", selectedRows.Count), "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                foreach (DataGridViewRow row in selectedRows)
+                //Data parallism fore delete multiple users
+                Parallel.Invoke(() =>
                 {
-                    using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\payroll\payroll\payroll\payroll.mdf;Integrated Security=True")
-)
+                    foreach (DataGridViewRow row in selectedRows)
                     {
-                        using (SqlCommand cmd = new SqlCommand("DELETE FROM employee WHERE indexNo = @indexNo", con))
+                        using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\payroll\payroll\payroll\payroll.mdf;Integrated Security=True")
+    )
                         {
-                            cmd.CommandType = CommandType.Text;
-                            cmd.Parameters.AddWithValue("@indexNo", row.Cells["indexNo"].Value);
-                            con.Open();
-                            cmd.ExecuteNonQuery();
-                            con.Close();
+                            using (SqlCommand cmd = new SqlCommand("DELETE FROM employee WHERE indexNo = @indexNo", con))
+                            {
+                                cmd.CommandType = CommandType.Text;
+                                cmd.Parameters.AddWithValue("@indexNo", row.Cells["indexNo"].Value);
+                                con.Open();
+                                cmd.ExecuteNonQuery();
+                                con.Close();
+                            }
                         }
                     }
-                }
+                });
                 employeeDG.Rows.Clear();
                 loadEmployees();
             }
